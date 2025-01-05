@@ -113,7 +113,11 @@ const Navbar = () => {
 export default Navbar;
 
 const MobileNavbar = ({user}) => {
+  const [logoutUser, { data, isSuccess }] = useLogoutUserMutation();
   const navigate = useNavigate();
+  const logoutHandler = async () => {
+    await logoutUser();
+  };
   
   return (
     <Sheet>
