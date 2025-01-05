@@ -40,13 +40,13 @@ const Login = () => {
   const [
     loginUser,
     {
-/*************  ✨ Codeium Command ⭐  *************/
-  /**
-   * Handles the change event of the input elements in the login/signup form.
-   *
-   * @param {React.ChangeEvent<HTMLInputElement>} e The event object
-   */
-/******  19d6cade-316d-4d36-be3a-403ae4ce5086  *******/      data: loginData,
+      /*************  ✨ Codeium Command ⭐  *************/
+      /**
+       * Handles the change event of the input elements in the login/signup form.
+       *
+       * @param {React.ChangeEvent<HTMLInputElement>} e The event object
+       */
+      /******  19d6cade-316d-4d36-be3a-403ae4ce5086  *******/ data: loginData,
       error: loginError,
       isLoading: loginIsLoading,
       isSuccess: loginIsSuccess,
@@ -70,18 +70,18 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if(registerIsSuccess && registerData){
-      toast.success(registerData.message || "Signup successful.")
+    if (registerIsSuccess && registerData) {
+      toast.success(registerData.message || "Signup successful.");
     }
-    if(registerError){
-      toast.error(registerError.data.message || "Signup Failed");
+    if (registerError) {
+      toast.error(registerError?.data?.message || "Signup Failed");
     }
-    if(loginIsSuccess && loginData){
+    if (loginIsSuccess && loginData) {
       toast.success(loginData.message || "Login successful.");
       navigate("/");
     }
-    if(loginError){ 
-      toast.error(loginError.data.message || "login Failed");
+    if (loginError) {
+      toast.error(loginError?.data?.message || "login Failed");
     }
   }, [
     loginIsLoading,
