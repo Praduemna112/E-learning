@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:["http://localhost:5173","https://e-learning-sigma-two.vercel.app"],
+    origin:"https://e-learning-mxqj.onrender.com",
     credentials:true
 }));
  
