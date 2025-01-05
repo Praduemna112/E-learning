@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:"*",
+    origin:"https://e-learning-sigma-two.vercel.app/",
     credentials:true
 }));
  
