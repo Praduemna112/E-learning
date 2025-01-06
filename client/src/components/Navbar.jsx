@@ -108,6 +108,7 @@ const Navbar = () => {
           <DarkMode />
         </div>
       </div>
+
       {/* Mobile device  */}
       <div className="flex md:hidden items-center justify-between px-4 h-full">
         <h1 className="font-extrabold text-2xl">E-learning</h1>
@@ -154,28 +155,30 @@ const MobileNavbar = ({ user }) => {
           <SheetTitle>
             <Link to="/">E-Learning</Link>
           </SheetTitle>
-          <DarkMode />
+          <DarkMode /> {/* Restored themes button */}
         </SheetHeader>
         <Separator className="mr-2" />
         <nav className="flex flex-col space-y-4">
-          <Link to="/my-learning">My Learning</Link>
-          <Link to="profile">Edit Profile</Link>{" "}
-          <p className="cursor-pointer text-red-500" onClick={logoutHandler}>
-            Log out
-          </p>
-        </nav>
-        {user?.role === "instructor" && (
-          <SheetFooter>
-            <SheetClose asChild>
-              <Button
-                type="submit"
-                onClick={() => navigate("/admin/dashboard")}
+          {user && (
+            <>
+              <Link to="/">Home</Link>
+              <Link to="/my-learning">My Learning</Link>
+              <Link to="/profile">Edit Profile</Link>
+              <p
+                className="cursor-pointer text-red-500"
+                onClick={logoutHandler}
               >
-                Dashboard
-              </Button>
-            </SheetClose>
-          </SheetFooter>
-        )}
+                Log out
+              </p>
+            </>
+          )}
+          {!user && (
+            <>
+              <Link to="/">Home</Link>
+              <Link to="/login">Login</Link>
+            </>
+          )}
+        </nav>
       </SheetContent>
     </Sheet>
   );
