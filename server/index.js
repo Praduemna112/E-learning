@@ -12,7 +12,7 @@ import path from "path";
 
 
 dotenv.config({});
-
+//https://e-learning-mxqj.onrender.com/  link to deploy
 // call database connection here
 connectDB();
 const app = express();
